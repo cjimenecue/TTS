@@ -1,16 +1,11 @@
-# text_to_speech
+# Proyecto Flutter text_to_speech
 
-A new Flutter project.
+Autor: Christian Jiménez Cuesta
+Fecha de creación: 01/10/2020
 
-## Getting Started
+## Información básica
 
-This project is a starting point for a Flutter application.
+Este proyecto tiene la finalidad de desarrollar una aplicación TTS con el uso de Flutter que ppueda leer los datos introducidos en un campo de textos. Por ahora, tan solo puede leer los datos del campo de texto en 3 idiomas: Español, Inglés y Chino.
 
-A few resources to get you started if this is your first Flutter project:
+Para más información consulte el siguiente enlace para ver un vídeo que explica los aspectos más sobresalientes del codigo y realiza una prueba de la aplicación.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
