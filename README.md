@@ -1,7 +1,6 @@
 # Proyecto Flutter text_to_speech
 
 Autor: Christian Jiménez Cuesta
-Fecha de creación: 01/10/2020
 
 ## Información básica
 
