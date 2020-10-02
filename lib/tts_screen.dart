@@ -12,7 +12,6 @@ class _TTSScreenState extends State<TTSScreen> {
   final TextEditingController _txtfieldController = new TextEditingController();
   String valueList = "Español";
   List<DropdownMenuItem<String>> menuList;
-  String valorLista = "Español";
 
   void initList() {
     menuList = [
