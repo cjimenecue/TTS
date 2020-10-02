@@ -10,10 +10,37 @@ class TTSScreen extends StatefulWidget {
 class _TTSScreenState extends State<TTSScreen> {
   final FlutterTts tts = FlutterTts();
   final TextEditingController _txtfieldController = new TextEditingController();
+  String valueList = "Español";
+  List<DropdownMenuItem<String>> menuList;
   String valorLista = "Español";
+
+  void initList() {
+    menuList = [];
+    menuList = [
+      new DropdownMenuItem<String>(
+          value: "Español",
+          child: Text("Español",
+              style: TextStyle(
+                color: Colors.white,
+              ))),
+      new DropdownMenuItem<String>(
+          value: "Inglés",
+          child: Text("Inglés",
+              style: TextStyle(
+                color: Colors.white,
+              ))),
+      new DropdownMenuItem<String>(
+          value: "Chino",
+          child: Text("Chino",
+              style: TextStyle(
+                color: Colors.white,
+              )))
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
+    initList();
     return Scaffold(
       appBar: AppBar(
         title: Text("Lector TTS"),
@@ -21,8 +48,8 @@ class _TTSScreenState extends State<TTSScreen> {
         actions: <Widget>[
           Center(
             child: DropdownButton(
-              items: <String>["Español", "Chino", "Inglés"]
-                  .map<DropdownMenuItem<String>>((String value) {
+              items: menuList,
+              /*items: lista.map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
                   child: Text(
@@ -32,7 +59,7 @@ class _TTSScreenState extends State<TTSScreen> {
                     ),
                   ),
                 );
-              }).toList(),
+              }).toList(),*/
               dropdownColor: Colors.green,
               icon: Padding(
                 padding: const EdgeInsets.only(left: 20.0),
@@ -41,10 +68,10 @@ class _TTSScreenState extends State<TTSScreen> {
                   color: Colors.white,
                 ),
               ),
-              value: valorLista,
+              value: valueList,
               onChanged: (String valorNuevo) {
                 setState(() {
-                  valorLista = valorNuevo;
+                  valueList = valorNuevo;
                 });
               },
             ),
@@ -57,7 +84,6 @@ class _TTSScreenState extends State<TTSScreen> {
       body: ListView(
         children: [
           Container(
-            //child: Column(
             child: Padding(
               padding: const EdgeInsets.only(
                   left: 15.0, right: 40.0, top: 8.0, bottom: 8.0),
@@ -106,11 +132,11 @@ class _TTSScreenState extends State<TTSScreen> {
     // Podríamos haber hecho un mapa, con la clave el nombre del idioma
     // y el valor como el identificador del idioma en el TTS,
     // pero al ser pocos es más sencillo de esta manera.
-    if (valorLista == "Español") {
+    if (valueList == "Español") {
       tts.setLanguage("es-Es");
-    } else if (valorLista == "Chino") {
+    } else if (valueList == "Chino") {
       tts.setLanguage("zh-CN");
-    } else if (valorLista == "Inglés") {
+    } else if (valueList == "Inglés") {
       tts.setLanguage("en-US");
     }
     tts.speak(_txtfieldController.text);
