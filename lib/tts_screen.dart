@@ -15,7 +15,6 @@ class _TTSScreenState extends State<TTSScreen> {
   String valorLista = "Español";
 
   void initList() {
-    menuList = [];
     menuList = [
       new DropdownMenuItem<String>(
           value: "Español",
